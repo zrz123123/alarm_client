@@ -1,0 +1,34 @@
+server:
+  port: 18081
+spring:
+  mqtt:
+    username: 123123
+    password: Gqu3st@!
+    url: tcp://101.43.160.204:11883
+#    client:
+#      id: '13a8ec581ba843c7bff0f541aa14fd03'
+    default:
+      topic: 'mqtt'
+    topics: topic,hello,hit/us
+    qosValues: 2,3
+  datasource:
+      url: jdbc:mysql://101.43.160.204:13309/alarm?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+      username: alarm
+      password: a1Arm2!23
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+    devtools:
+      restart:
+        enabled: true #设置开启热部署
+    freemarker:
+      cache: false #页面不加载缓存，修改即使生效
+  mybatis:
+    configuration:
+      map-underscore-to-camel-case: true #下划线驼峰设置
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 打印SQL语句
+  web:
+    resources:
+      static-locations: classpath:/static/,classpath:/templates/
